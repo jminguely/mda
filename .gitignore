@@ -1,0 +1,24 @@
+### Miscellaneous
+.DS_Store
+Thumbs.db
+
+### Vagrant
+/.vagrant
+
+### Composer
+/vendor/
+
+### IDE
+/.idea
+
+### PHPCS
+cs_fixer*
+.php_cs.cache
+
+### WordPress
+/htdocs/cms/
+/htdocs/content/uploads/
+/htdocs/content/upgrade/
+
+### Environment Credentials
+.env
