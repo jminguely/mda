@@ -22,3 +22,5 @@ cs_fixer*
 
 ### Environment Credentials
 .env
+
+storage/

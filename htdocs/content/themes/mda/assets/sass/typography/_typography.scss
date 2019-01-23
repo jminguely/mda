@@ -1,3 +1,35 @@
+@font-face {
+  font-family: 'BrezelGrotesk';
+  src: url('../fonts/BrezelGroteskWEB-Bold.woff2') format('woff2'),
+    url('../fonts/BrezelGroteskWEB-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BrezelGrotesk';
+  src: url('../fonts/BrezelGroteskWEB-Light.woff2') format('woff2'),
+    url('../../../fonts/BrezelGroteskWEB-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BrezelGrotesk';
+  src: url('../fonts/BrezelGroteskWEB-LightItalic.woff2') format('woff2'),
+    url('../fonts/BrezelGroteskWEB-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'BrezelGrotesk';
+  src: url('../fonts/BrezelGroteskWEB-Regular.woff2') format('woff2'),
+    url('../fonts/BrezelGroteskWEB-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
 body,
 button,
 input,

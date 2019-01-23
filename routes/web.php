@@ -3,6 +3,7 @@
 /**
  * Application routes.
  */
-Route::get('/', function () {
-    return view('welcome');
+Route::any('/', function ($post, $query) {
+    $posts = $query->get_posts();
+    return view('welcome', ['name' => 'Julien', 'items' => $posts]);
 });

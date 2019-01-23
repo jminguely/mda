@@ -1,107 +1,51 @@
-.main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
-
-	ul {
-		display: none;
-		list-style: none;
-		margin: 0;
-		padding-left: 0;
-
-		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			position: absolute;
-			top: 100%;
-			left: -999em;
-			z-index: 99999;
-
-			ul {
-				left: -999em;
-				top: 0;
-			}
-
-			li {
-				&:hover > ul,
-				&.focus > ul {
-					left: 100%;
-				}
-			}
-
-			a {
-				width: 200px;
-			}
-
-			:hover > a,
-			.focus > a {
-			}
-
-			a:hover,
-			a.focus {
-			}
-		}
-
-		li:hover > ul,
-		li.focus > ul {
-			left: auto;
-		}
-	}
-
-	li {
-		float: left;
+.site-nav {
+	padding: 1em 0;
+	.row {
 		position: relative;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
 
-		&:hover > a,
-		&.focus > a {
+		.site-title {
+			font-size: 1.5rem;
+			margin-top: -1rem;
 		}
-	}
 
-	a {
-		display: block;
-		text-decoration: none;
-	}
+		.nav-item {
+			background: $white;
+			z-index: 1;
+			text-decoration: none;
+			padding: 0.5em 1rem;
+			text-transform: uppercase;
+			letter-spacing: 0;
+			transition: letter-spacing 0.3s ease;
 
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a,
-	.current-menu-ancestor > a {
-	}
-}
+			&:hover {
+				letter-spacing: 0.5vw;
+			}
+		}
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
+		.nav-item-group {
+			text-align: right;
+			display: flex;
+			flex-direction: column;
+			z-index: 1;
+			line-height: 1;
+			padding: 0.5em 0;
 
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: block;
-	}
-}
+			.nav-item{
+				padding: 0.25em 1rem;
+				margin-left: auto;
+			}
+		}
 
-.comment-navigation,
-.posts-navigation,
-.post-navigation {
-
-	.site-main & {
-		margin: 0 0 1.5em;
-		overflow: hidden;
-	}
-
-	.nav-previous {
-		float: left;
-		width: 50%;
-	}
-
-	.nav-next {
-		float: right;
-		text-align: right;
-		width: 50%;
+		&:after {
+			content: '';
+			width: 100%;
+			border-bottom: 1px solid $black;
+			position: absolute;
+			top: 1.25rem;
+			z-index: 0;
+		}
 	}
 }
