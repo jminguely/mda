@@ -1,29 +1,23 @@
-Themosis framework
-==================
+Coopérative MDA
+===============
 
-[![Build Status](https://travis-ci.org/themosis/themosis.svg?branch=dev)](https://travis-ci.org/themosis/themosis)
+Website for the Cooperative MDA. 
 
-The Themosis framework is a tool aimed to WordPress developers of any levels. But the better WordPress and PHP knowledge you have the easier it is to work with.
+Power by Wordpress & Themosis
 
-Themosis framework is a tool to help you develop websites and web applications faster using [WordPress](https://wordpress.org). Using an elegant and simple code syntax, Themosis framework helps you structure and organize your code and allows you to better manage and scale your WordPress websites and applications.
+## Installation
+Copy the .env file and edit the parameter to make it target your local database
 
-Development team
-----------------
-The framework was created by [Julien Lambé](https://www.themosis.com/), who continues to lead the development.
+```
+$ cp .env.example .env
+$ vim .env
+```
 
-Contributing
-------------
-Any help is appreciated. The project is open-source and we encourage you to participate. You can contribute to the project in multiple ways by:
+## Theme building
+Go to the theme directory and launch the building with:
+```
+$ yarn dev
+```
 
-- Reporting a bug issue
-- Suggesting features
-- Sending a pull request with code fix or feature
-- Following the project on [GitHub](https://github.com/themosis)
-- Following us on Twitter: [@Themosis](https://twitter.com/Themosis)
-- Sharing the project around your community
-
-For details about contributing to the framework, please check the [contribution guide](https://framework.themosis.com/docs/1.3/contributing).
-
-License
--------
-The Themosis framework is open-source software licensed under [GPL-2+ license](http://www.gnu.org/licenses/gpl-2.0.html).
+## Deploy
+// TODO
