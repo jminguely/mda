@@ -1,0 +1,33 @@
+.mosaic {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+
+  .block {
+    position: absolute;
+    width: 400px;
+    height: auto;
+    top: 30%;
+    left: 50%;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+
+    img {
+      filter: url(#grayscaledBlur);
+
+      &:hover {
+        filter: none;
+      }
+    }
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
