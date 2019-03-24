@@ -1,0 +1,32 @@
+.container-fluid {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.map-container {
+  height: 100%;
+  margin: 0 0 1.5em;
+
+  @include media-breakpoint-down(sm) {
+    min-height: 300px;
+	}
+
+  .map {
+    height: 100%;
+  }
+}
+
+.alert {
+  border: 1px solid $black;
+  padding: 2em;
+  text-align: center;
+
+  p {
+    margin: 0;
+  }
+
+  &.alert-lg{
+    padding: 5em 2em;
+  }
+}
+

@@ -1,0 +1,21 @@
+{#
+/**
+ * Block Name: Column
+ *
+ * This is the template that displays the column block.
+ */
+#}
+
+
+
+{% if is_preview %}
+    {# <p>I will only appear in the editor.</p> #}
+{% endif %}
+
+<div
+  id="block-column-{{ block.id }}"
+  class="column"
+>
+  <h2>{{ fields.title }}</h2>
+  <p>{{ fields.content|raw }}</p>
+</div>

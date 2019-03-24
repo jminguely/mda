@@ -30,18 +30,23 @@
   font-style: normal;
 }
 
-body,
-button,
-input,
-select,
-optgroup,
-textarea {
-	color: $color__text-main;
-	font-family: $font__main;
-	@include font-size(1);
-	line-height: $font__line-height-body;
+.hover-expand {
+  letter-spacing: 0;
+  transition: letter-spacing 0.3s ease;
+
+  &:hover {
+    letter-spacing: 0.5vw;
+  }
 }
 
-@import "headings";
+.list-member {
+  list-style: none;
+  padding: 0;
 
-@import "copy";
+  li {
+    &:after {
+      content: "—";
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.th-form-group {
+  .th-form-input {
+    margin: 0 0 1.5em;
+
+    label {
+      display: block;
+      margin: 0;
+    }
+
+    textarea,
+    input {
+      display: block;
+      width: 100%;
+      margin: 0 0 0.5em;
+      border: 1px solid $black;
+      background: transparent;
+    }
+
+    textarea {
+      min-height: 150px;
+    }
+
+    input[type=submit] {
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+
+      &:hover {
+        background: transparentize($black, 0.9);
+      }
+    }
+  }
+}

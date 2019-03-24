@@ -1,6 +1,23 @@
+.site-header {
+	height: auto;
+
+	&.site-header-home {
+		height: 100vh;
+
+		.nav-item-group {
+			margin-top: -1.5em;
+		}
+	}
+}
+
 .site-nav {
 	padding: 1em 0;
-	.row {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: space-between;
+
+	.site-nav-row {
 		position: relative;
 		width: 100%;
 		display: flex;
@@ -16,6 +33,7 @@
 			width: 100%;
 			height: 1px;
 			margin-top: 1.25em;
+			flex: 0 1 auto;
 		}
 
 
@@ -28,6 +46,7 @@
 			transition: letter-spacing 0.3s ease;
 			flex: 1 0 auto;
 
+			&.current,
 			&:hover {
 				letter-spacing: 0.5vw;
 			}

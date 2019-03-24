@@ -1,0 +1,29 @@
+{% extends 'layouts/main.twig' %}
+
+{% block main %}
+    
+    {% if children|length > 1 %}
+        <div class="row">
+            {% for child in children %}
+                {% if loop.first and children|length < 3 %}
+                    <div class="col-md-8">
+
+                {% else %}
+                    <div class="col-md-4">
+                {% endif %}
+                    <h2 class="mt-4 mb-6">
+                        {{child.post_title}}
+                    </h2>
+                    <div class="content">
+                        {{child.post_content|raw}}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <h1>{{ post.post_title }}</h1>
+        {{ post.post_content|raw }}
+    {% endif %}
+    
+    
+{% endblock %}
