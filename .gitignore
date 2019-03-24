@@ -24,3 +24,4 @@ cs_fixer*
 .env
 
 storage/
+log/
