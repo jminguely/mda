@@ -5,6 +5,8 @@ set :branch, :dev
 
 set :deploy_to, -> { "/home/jminguely/www/#{fetch(:application)}" }
 
+set :opcache_file_url, "https://mda.minguely.ch/opcache_clear.php"
+
 # Extended Server Syntax
 # ======================
 server 'ssh-jminguely.alwaysdata.net', user: 'jminguely', roles: %w{web app db}

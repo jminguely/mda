@@ -7,10 +7,12 @@ $members = PostType::make('members', 'Members', 'Member')->set([
   'menu_position' => 20,
   'supports'      => ['title'],
   'rewrite'       => false,
-  'query_var'     => false
+  'query_var'     => false,
+  'menu_icon'     => 'dashicons-smiley'
 ]);
 
 Metabox::make('infos', 'members')
+  ->add(Field::collection('gallery'))
   ->add(Field::text('url'))
   ->add(Field::choice('categorie', [
     'choices' => ['arts-visuels', 'arts-vivants', 'musique']
