@@ -1,5 +1,5 @@
 
-<header class="site-header container-fluid {{ fn.is_front_page() ? 'site-header-home' : '' }}">
+<header class="site-header container-fluid py-1 {{ fn.is_front_page() ? 'site-header-home' : '' }}">
   <div class="row d-md-none pt-4">
     <div class="col-8 pt-2">
       {% include 'parts/header_nav_item.twig' with { headerNavItem: primaryMenu[0], headerNavItemClasses: 'site-title' } %}
@@ -39,8 +39,22 @@
       </div>
       <div class="site-nav-col sep-before">
         <div class="nav-item-group">
-          <a class="nav-item" target="_blank" href="https://www.facebook.com/maisondesartistesfribourg/">Facebook</a>
-          <a class="nav-item" target="_blank" href="#">Instagram</a>
+          {% if fn.get_option('th_option_social_facebook') %}
+            <a 
+              class="nav-item" 
+              target="_blank" 
+              href="{{ fn.get_option('th_option_social_facebook') }}">
+              Facebook
+            </a>
+          {% endif %}
+          {% if fn.get_option('th_option_social_instagram') %}
+            <a 
+              class="nav-item" 
+              target="_blank" 
+              href="{{ fn.get_option('th_option_social_instagram') }}">
+              Instagram
+            </a>
+          {% endif %}
         </div>
       </div>
     </div>
