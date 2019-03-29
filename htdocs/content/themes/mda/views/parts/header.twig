@@ -1,10 +1,10 @@
 
 <header class="site-header container-fluid py-1 {{ fn.is_front_page() ? 'site-header-home' : '' }}">
-  <div class="row d-md-none pt-4">
-    <div class="col-8 pt-2">
+  <div class="d-flex d-md-none pt-4">
+    <div class="pr-1">
       {% include 'parts/header_nav_item.twig' with { headerNavItem: primaryMenu[0], headerNavItemClasses: 'site-title' } %}
     </div>
-    <div class="col-4 text-right">
+    <div class="pl-1 text-right">
       <div class="hamburger hamburger--collapse toggle-navigation" tabindex="0"
      aria-label="Menu" role="button" aria-controls="collapseExample">
         <div class="hamburger-box">
