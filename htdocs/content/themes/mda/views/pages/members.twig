@@ -13,7 +13,7 @@
           {% for member in members %}
             <li>
               {% if member.url %}
-                <a href="{{ member.url }}">{{ member.post_title }}</a>
+                <a href="{{ member.url }}" target="_blank">{{ member.post_title }}</a>
               {% else %}
                 <span>{{ member.post_title }}</span>
               {% endif %}          
