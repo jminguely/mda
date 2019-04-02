@@ -15,6 +15,8 @@ Route::get('front', 'PageController@front');
 
 Route::get('page', ['locataires', 'uses' => 'PageController@members']);
 
+Route::get('template', ['laboratory', 'uses' => 'PageController@laboratory']);
+
 Route::get('page', ['contact', 'uses' => 'PageController@contact']);
 
 Route::post('page', ['contact', 'uses' => 'PageController@sendContactConfirmation']);

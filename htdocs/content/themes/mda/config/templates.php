@@ -9,5 +9,5 @@
  * where your template is available.
  */
 return [
-    'custom-template' => [__('Custom Template', THEME_TD), ['page']],
+    'laboratory' => [__('Laboratoire créatif', THEME_TD), ['page']],
 ];

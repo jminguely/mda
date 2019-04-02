@@ -31,3 +31,12 @@
   }
 }
 
+.masonry-2 {
+  column-count: 2;
+  column-gap: $grid-gutter-width;
+}
+
+.masonry-3 {
+  column-count: 3;
+  column-gap: $grid-gutter-width;
+}

@@ -7374,6 +7374,20 @@ a.text-dark:hover, a.text-dark:focus {
   padding: 5em 2em;
 }
 
+.masonry-2 {
+  -webkit-column-count: 2;
+          column-count: 2;
+  -webkit-column-gap: 30px;
+          column-gap: 30px;
+}
+
+.masonry-3 {
+  -webkit-column-count: 3;
+          column-count: 3;
+  -webkit-column-gap: 30px;
+          column-gap: 30px;
+}
+
 .site-header {
   height: auto;
 }
@@ -7515,7 +7529,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .site-nav .site-nav-row .nav-item.current, .site-nav .site-nav-row .nav-item:hover {
-  letter-spacing: 1em;
+  letter-spacing: 0.5em;
 }
 
 .site-nav .site-nav-row .nav-item.site-title.current, .site-nav .site-nav-row .nav-item.site-title:hover {

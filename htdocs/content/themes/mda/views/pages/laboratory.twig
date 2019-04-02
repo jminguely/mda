@@ -1,0 +1,28 @@
+{% extends 'layouts/main.twig' %}
+
+{% block main %}
+  <div class="row">
+    <div class="col-md-4">
+      <h2 class="mt-4 mb-6">
+        {{ post.post_title }}
+      </h2>
+    </div>
+  </div>
+  <div class="row">
+    {% if post.post_content %}
+      <div class="col-md-4">
+        <div class="post-content">
+          {{ post.post_content|raw }}
+        </div>
+      </div>
+    {% endif %}
+    <div class="{{ post.post_content ? 'col-md-8 masonry-2' : 'col-md-12 masonry-3' }}">
+      {% for image in meta(post.ID, 'th_gallery') %}
+        <a class="d-block mb-4" href="#">
+          <img src="{{ fn.wp_get_attachment_url(image, 'medium') }}" alt="" class="d-block w-100">
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+    
+{% endblock %}

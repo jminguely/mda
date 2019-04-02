@@ -1,7 +1,7 @@
 
 <header class="site-header container-fluid py-1 {{ fn.is_front_page() ? 'site-header-home' : '' }}">
-  <div class="d-flex d-md-none pt-4">
-    <div class="pr-1">
+  <div class="d-flex d-md-none pt-4 justify-content-between">
+    <div class="pr-1 py-3">
       {% include 'parts/header_nav_item.twig' with { headerNavItem: primaryMenu[0], headerNavItemClasses: 'site-title' } %}
     </div>
     <div class="pl-1 text-right">
@@ -36,6 +36,9 @@
     <div class="site-nav-row">
       <div class="site-nav-col sep-after">
         {% include 'parts/header_nav_item.twig' with { headerNavItem: primaryMenu[5] } %}
+      </div>
+      <div class="site-nav-col text-center sep-after sep-before">
+        {% include 'parts/header_nav_item.twig' with { headerNavItem: primaryMenu[6] } %}
       </div>
       <div class="site-nav-col sep-before">
         <div class="nav-item-group">

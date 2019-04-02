@@ -1,5 +1,6 @@
 .site-header {
 	height: auto;
+
 	&.site-header-home {
 		@include media-breakpoint-up(md) {
 			height: 100vh;
@@ -100,7 +101,7 @@
 
 			&.current,
 			&:hover {
-				letter-spacing: 1em;
+				letter-spacing: 0.5em;
 			}
 
 			&.site-title {

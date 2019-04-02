@@ -18,3 +18,8 @@ Metabox::make('infos', 'members')
     'choices' => ['arts-visuels', 'arts-vivants', 'musique']
   ]))
   ->set();
+
+Metabox::make('laboratory', 'page')
+  ->setTemplate('laboratory')
+  ->add(Field::collection('gallery'))
+  ->set();
