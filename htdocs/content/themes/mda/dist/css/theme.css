@@ -7344,6 +7344,32 @@ a.text-dark:hover, a.text-dark:focus {
   margin: auto;
 }
 
+.home-gallery {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.home-gallery img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: opacity 1s ease;
+  transition: opacity 1s ease;
+}
+
+.home-gallery img.visible {
+  opacity: 1;
+}
+
 .map-container {
   height: 100%;
   margin: 1.5em 0 1.5em;

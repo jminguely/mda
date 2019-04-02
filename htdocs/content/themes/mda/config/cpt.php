@@ -23,3 +23,8 @@ Metabox::make('laboratory', 'page')
   ->setTemplate('laboratory')
   ->add(Field::collection('gallery'))
   ->set();
+
+Metabox::make('homepage', 'page')
+  ->setTemplate('homepage')
+  ->add(Field::collection('gallery'))
+  ->set();

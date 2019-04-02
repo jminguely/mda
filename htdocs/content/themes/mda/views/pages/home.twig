@@ -1,4 +1,9 @@
 {% extends 'layouts/main.twig' %}
 
 {% block main %}
+  <div class="home-gallery">
+    {% for image in gallery %}
+        <img src="{{ fn.wp_get_attachment_url(image, 'large') }}">
+    {% endfor %}
+  </div>
 {% endblock %}

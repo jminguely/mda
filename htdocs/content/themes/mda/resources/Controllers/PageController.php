@@ -23,7 +23,8 @@ class PageController extends Controller
   }
   
   public function front($post) {
-    return view('pages/home', ['post' => $post]);
+    $gallery = get_post_meta($post->ID, 'th_gallery');
+    return view('pages/home', ['post' => $post, 'gallery' => $gallery]);
   }
 
   public function members($post, $query) {
