@@ -3,7 +3,7 @@
 {% block main %}
   <div class="home-gallery">
     {% for image in gallery %}
-        <img src="{{ fn.wp_get_attachment_url(image, 'large') }}">
+        <img src="{{ fn.wp_get_attachment_image_src(image, 'home_cover')[0] }}">
     {% endfor %}
   </div>
 {% endblock %}

@@ -15,5 +15,5 @@
  *                            to the media custom field. If string, used as the display name ;)
  */
 return [
-    'themosis_sample' => [200, 125, false],
+    'home_cover' => [1000, 1000, false],
 ];
