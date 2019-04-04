@@ -2,6 +2,14 @@
 	height: auto;
 
 	&.site-header-home {
+		height: calc(100vh - 240px);
+
+		.admin-bar & {
+			@include media-breakpoint-up(md) {
+				height: calc(100vh - 32px);
+			}
+		}
+
 		@include media-breakpoint-up(md) {
 			height: 100vh;
 		}
@@ -55,7 +63,7 @@
 		width: 100%;
 		display: flex;
 		justify-content: space-between;
-
+		
 		.site-nav-col {
 			flex: 1;
 			display: flex;
@@ -82,7 +90,8 @@
 		}
 
 		@include media-breakpoint-down(sm) {
-			display: block;
+			flex-flow: column;
+			flex-grow: 1;
 		}
 
 		.nav-item {

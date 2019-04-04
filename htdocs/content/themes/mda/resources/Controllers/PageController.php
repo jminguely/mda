@@ -27,9 +27,9 @@ class PageController extends Controller
     return view('pages/home', ['post' => $post, 'gallery' => $gallery]);
   }
 
-  public function members($post, $query) {
-    $members = get_posts( array(
-      'post_type' => 'members'
+  public function tenants($post, $query) {
+    $tenants = get_posts( array(
+      'post_type' => 'tenants'
     ));
 
     $categories = array(
@@ -38,13 +38,13 @@ class PageController extends Controller
       'musique'       => array()
     );
 
-    foreach ($members as $key => $member) {
+    foreach ($tenants as $key => $member) {
       $member->categorie = get_post_meta($member->ID, 'th_categorie', true);
       $member->url = get_post_meta($member->ID, 'th_url', true);
       array_push($categories[$member->categorie], $member);
     }
 
-    return view('pages/members', ['post' => $post, 'categories' => $categories]);
+    return view('pages/tenants', ['post' => $post, 'categories' => $categories]);
   }
 
   

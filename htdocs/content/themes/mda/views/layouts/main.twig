@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{ wp_head() }}
 </head>
-<body>
+<body {{ fn.body_class() }}>
 <div id="app">
     {% include 'parts/header.twig' %}
 

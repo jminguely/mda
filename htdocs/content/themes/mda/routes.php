@@ -13,7 +13,7 @@
 
 Route::get('front', 'PageController@front');
 
-Route::get('page', ['locataires', 'uses' => 'PageController@members']);
+Route::get('page', ['locataires', 'uses' => 'PageController@tenants']);
 
 Route::get('template', ['laboratory', 'uses' => 'PageController@laboratory']);
 
