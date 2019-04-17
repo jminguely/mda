@@ -16,9 +16,9 @@
         </div>
       {% endif %}
       {% for image in gallery %}
-        <a class="d-block mb-4" href="#">
-          <img src="{{ fn.wp_get_attachment_url(image, 'medium') }}" alt="" class="d-block w-100">
-        </a>
+        <div class="d-block mb-4">
+          <img src="{{ fn.wp_get_attachment_image_src(image, 'medium')[0] }}" alt="" class="d-block w-100">
+        </div>
       {% endfor %}
     </div>
   </div>
