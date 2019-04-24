@@ -76,13 +76,6 @@ class PageController extends Controller
       'formSentState' => $sentState
     ]);
   }
-
-  
-  public function laboratory($post, $query) {
-    $gallery = get_post_meta($post->ID, 'th_gallery');
-
-    return view('pages/laboratory', ['post' => $post, 'gallery' => $gallery]);
-  }
   
   public function default($post, $query) {
     $children = get_posts( array(

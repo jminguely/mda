@@ -1,0 +1,14 @@
+.masonry-grid {
+  margin: 0 -($grid-gutter-width / 2);
+
+  .masonry-grid-item {
+    display: block;
+    width: calc((100% / 3) - #{$grid-gutter-width});
+    box-sizing: border-box;
+    margin: $grid-gutter-width / 2;
+
+    @include media-breakpoint-down(sm) {
+      width: calc((100% / 2) - #{$grid-gutter-width});
+    }
+  }
+}

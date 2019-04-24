@@ -1,0 +1,19 @@
+{% extends 'layouts/main.twig' %}
+
+{% block main %}
+    
+  <div class="masonry-grid mt-3">
+    {% for post in posts %}
+      <div class="card masonry-grid-item">
+        <h1 class="mb-2">{{ post.post_title }}</h1>
+        <div class="mb-2">
+          <time datetime="{{ post.post_date|date("Y-m-d") }}" class="text-muted">
+            {{ post.post_date|date("d.m.Y") }}
+          </time>
+        </div>
+        {{ post.post_content|raw }}
+      </div>
+    {% endfor %}
+  </div>
+    
+{% endblock %}

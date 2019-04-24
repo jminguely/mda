@@ -12,11 +12,6 @@ PostType::make('tenants', 'Locataires', 'Member')
     'menu_icon' => 'dashicons-smiley'
 ])->set();
 
-Metabox::make('laboratory', 'page')
-  ->setTemplate('laboratory')
-  ->add(Field::collection('gallery'))
-  ->set();
-
 Metabox::make('homepage', 'page')
   ->setTemplate('homepage')
   ->add(Field::collection('gallery'))

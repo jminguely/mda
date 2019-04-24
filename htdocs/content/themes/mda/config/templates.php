@@ -9,6 +9,5 @@
  * where your template is available.
  */
 return [
-    'laboratory' => [__('Laboratoire créatif', THEME_TD), ['page']],
     'homepage' => [__('Accueil', THEME_TD), ['page']],
 ];

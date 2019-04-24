@@ -11,14 +11,16 @@
 //   return view('pages.home', ['homepage' => true]);
 // });
 
-Route::get('front', 'PageController@front');
 
-Route::get('page', ['locataires', 'uses' => 'PageController@tenants']);
 
-Route::get('template', ['laboratory', 'uses' => 'PageController@laboratory']);
-
+// Contact
 Route::get('page', ['contact', 'uses' => 'PageController@contact']);
-
 Route::post('page', ['contact', 'uses' => 'PageController@sendContactConfirmation']);
 
+// Blog
+Route::any('home', 'PostController@archive');
+
+// Pages
+Route::get('front', 'PageController@front');
+Route::get('page', ['locataires', 'uses' => 'PageController@tenants']);
 Route::get('page', 'PageController@default');
