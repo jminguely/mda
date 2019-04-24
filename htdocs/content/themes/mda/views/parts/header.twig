@@ -37,9 +37,31 @@
       <div class="site-nav-col sep-after">
         {% include 'parts/header_nav_item.twig' with { headerNavItem: primaryMenu[5] } %}
       </div>
-      <div class="site-nav-col text-center sep-before">
+      <div class="site-nav-col text-center sep-before sep-after">
         {% include 'parts/header_nav_item.twig' with { headerNavItem: primaryMenu[6] } %}
+      </div>
+      <div class="site-nav-col sep-before">
+        <div class="nav-item-group">
+          {% if fn.get_option('th_option_social_facebook') %}
+            <a 
+              class="nav-item" 
+              target="_blank" 
+              href="{{ fn.get_option('th_option_social_facebook') }}">
+              Facebook
+            </a>
+          {% endif %}
+          {% if fn.get_option('th_option_social_instagram') %}
+            <a 
+              class="nav-item" 
+              target="_blank" 
+              href="{{ fn.get_option('th_option_social_instagram') }}">
+              Instagram
+            </a>
+          {% endif %}
+        </div>
       </div>
     </div>
   </nav>
 </header>
+
+  
