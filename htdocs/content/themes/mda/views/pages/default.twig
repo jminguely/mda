@@ -5,12 +5,7 @@
     {% if children|length > 1 %}
         <div class="row">
             {% for child in children %}
-                {% if loop.first and children|length < 3 %}
-                    <div class="col-md-8">
-
-                {% else %}
-                    <div class="col-md-4">
-                {% endif %}
+                <div class="col-md-4">
                     <h2 class="mt-4 mb-6">
                         {{child.post_title}}
                     </h2>
