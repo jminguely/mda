@@ -19,8 +19,7 @@ export default () => {
   if(gallery.length > 0) {
     const firstPaint = () => {
 
-      for (let i = 0; i < Math.min(positionMatrix.length, gallery.length); i++) {
-        console.log(i);
+      for (let i = 0; i < Math.min(positionMatrix.length, gallery[0].children.length); i++) {
         const position = positionMatrix[i];
         showImage(gallery[0].children[i], position, i);
       }
