@@ -4,7 +4,11 @@
     
     
   <div class="row">
-    {% for category, tenants in categories %}
+    <div class="col-md-4 mt-4 mb-6">
+      <h2>Les Locataires</h2>
+      <p>Découvrez bientôt les artistes et leur travail dans cette section</p>
+    </div>
+    {# {% for category, tenants in categories %}
       <div class="col-md-4">
         <h2 class="mt-4 mb-6">
           {{ __(category, 'mda') }}
@@ -21,7 +25,7 @@
           {% endfor %}
         </ul>
       </div>
-    {% endfor %}
+    {% endfor %} #}
   </div>
     
 {% endblock %}
