@@ -16,15 +16,17 @@ class PageController extends Controller
     $locations = get_nav_menu_locations();
     $menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
     $menuitems = wp_get_nav_menu_items( $menu->term_id, array( 'order' => 'DESC' ) );
-    
+
+    $bgGallery = get_post_meta(6, 'th_gallery');
+
     View::share([
       'primaryMenu'  => $menuitems,
+      'bg_gallery'  => $bgGallery,
     ]);    
   }
   
   public function front($post) {
-    $gallery = get_post_meta($post->ID, 'th_gallery');
-    return view('pages/home', ['post' => $post, 'gallery' => $gallery]);
+    return view('pages/home', ['post' => $post]);
   }
 
   public function tenants($post, $query) {

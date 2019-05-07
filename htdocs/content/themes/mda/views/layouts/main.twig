@@ -8,6 +8,11 @@
 </head>
 <body {{ fn.body_class() }}>
 <div id="app">
+    <div class="bg-gallery {{ not fn.is_front_page() ? 'bg-gallery-faded' : '' }}">
+    {% for image in bg_gallery %}
+        <img src="{{ fn.wp_get_attachment_image_src(image, 'home_cover')[0] }}">
+    {% endfor %}
+    </div>
     {% include 'parts/header.twig' %}
 
     <div class="container-fluid">
