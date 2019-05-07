@@ -26,19 +26,19 @@ export default () => {
     }
 
     const showNextImage = () => {
-      const imageToHideNumber = Math.floor(Math.random() * 5);
-      const imageToHideItem = gallery[0].querySelector(`[data-position='${imageToHideNumber}']`);
-
       const imagesNotVisible = gallery[0].querySelectorAll(`:not(.visible)`);
-      const imageToShowNumber = Math.floor(Math.random() * imagesNotVisible.length);
-      const imageToShowItem = imagesNotVisible[imageToShowNumber];
+      if (imagesNotVisible.length) {
+        const imageToHideNumber = Math.floor(Math.random() * 5);
+        const imageToHideItem = gallery[0].querySelector(`[data-position='${imageToHideNumber}']`);
 
-      imageToHideItem.classList.remove('visible');
-      imageToHideItem.removeAttribute('data-position');
+        const imageToShowNumber = Math.floor(Math.random() * imagesNotVisible.length);
+        const imageToShowItem = imagesNotVisible[imageToShowNumber];
 
-      console.log(imageToHideItem);
-      
-      showImage(imageToShowItem, positionMatrix[imageToHideNumber], imageToHideNumber);
+        imageToHideItem.classList.remove('visible');
+        imageToHideItem.removeAttribute('data-position');
+        
+        showImage(imageToShowItem, positionMatrix[imageToHideNumber], imageToHideNumber);
+      }
     }
 
     const showImage = (item, position, i) => {
