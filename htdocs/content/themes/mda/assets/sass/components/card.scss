@@ -1,4 +1,5 @@
 .card {
+  background: $white;
   box-shadow: 0 0 0.75em -0.25em transparentize($black, 0.8);
   box-sizing: border-box;
   padding: $grid-gutter-width / 2;

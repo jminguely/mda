@@ -6,11 +6,11 @@ export default () => {
   g=d.getElementsByTagName('body')[0];
 
   const positionMatrix = [
+    [1,1],
     [0,0],
     [0,2],
     [2,0],
     [2,2],
-    [1,1],
   ];
 
   const windowWidth = w.innerHeight||e.clientHeight||g.clientHeight;
@@ -19,7 +19,8 @@ export default () => {
   if(gallery.length > 0) {
     const firstPaint = () => {
 
-      for (let i = 0; i < positionMatrix.length; i++) {
+      for (let i = 0; i < Math.min(positionMatrix.length, gallery.length); i++) {
+        console.log(i);
         const position = positionMatrix[i];
         showImage(gallery[0].children[i], position, i);
       }
