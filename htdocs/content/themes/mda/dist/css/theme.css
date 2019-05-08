@@ -7319,6 +7319,10 @@ a.text-dark:hover, a.text-dark:focus {
   font-style: normal;
 }
 
+.text-underline {
+  text-decoration: underline;
+}
+
 .hover-expand {
   letter-spacing: 0;
   -webkit-transition: letter-spacing 0.3s ease;

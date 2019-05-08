@@ -10,4 +10,9 @@ class PostController extends Controller
     $posts = $query->get_posts();
     return view('posts/archive', ['post' => $post, 'posts' => $posts]);
   }
+
+  public function single($post, $query) {
+    $posts = $query->get_posts();
+    return view('posts/single', ['post' => $post]);
+  }
 }

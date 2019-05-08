@@ -1,0 +1,20 @@
+{% extends 'layouts/main.twig' %}
+
+{% block main %}
+    
+  <div class="row my-5">
+    <div class="col-md-8 offset-md-2 card p-5">
+      <h1 class="mb-2">{{ post.post_title }}</h1>
+      <div class="mb-3">
+        <time datetime="{{ post.post_date|date("Y-m-d") }}" class="text-muted">
+          {{ post.post_date|date("d.m.Y") }}
+        </time>
+      </div>
+      {{ post.post_content|raw }}
+    </div>
+  </div>
+  <div class="col-md-8 offset-md-2 px-5">
+    <span class="pr-1">←</span><a href="/actualites"> Retour aux articles</a>
+  </div>
+
+{% endblock %}

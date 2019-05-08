@@ -19,6 +19,7 @@ Route::post('page', ['contact', 'uses' => 'PageController@sendContactConfirmatio
 
 // Blog
 Route::any('home', 'PostController@archive');
+Route::any('single', 'PostController@single');
 
 // Pages
 Route::get('front', 'PageController@front');
