@@ -7477,6 +7477,11 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
+.main-content img {
+  max-width: 100%;
+  height: auto;
+}
+
 .site-header {
   height: auto;
 }
