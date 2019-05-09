@@ -1,4 +1,4 @@
-set :application, 'mda'
+set :application, 'cooperativemda.ch'
 
 set :stage, :staging
 set :branch, :dev
