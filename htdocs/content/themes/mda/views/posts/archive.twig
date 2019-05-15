@@ -4,18 +4,30 @@
     
   <div class="masonry-grid mt-3">
     {% for post in posts %}
-      <div class="card masonry-grid-item">
-        <h1 class="mb-2">{{ post.post_title }}</h1>
-        <div class="mb-2">
-          <time datetime="{{ post.post_date|date("Y-m-d") }}" class="text-muted">
-            {{ post.post_date|date("d.m.Y") }}
-          </time>
-        </div>
+      <a href="{{ fn.get_permalink(post.ID) }}" class="card masonry-grid-item">
+        <h1 class="mt-2 mb-4">{{ post.post_title }}</h1>
+        {% if fn.get_the_post_thumbnail(post.ID) %}
+          <figure class="card-thumbnail">
+            {{ fn.get_the_post_thumbnail(post.ID, 'post_thumbnail', {'class': 'img-full'})|raw }}
+          </figure>
+        {% endif %}
         {{ fn.wp_trim_words(post.post_content)|raw }}
-        <div class="text-right mt-3">
-          <a href="{{ fn.get_permalink(post.ID) }}" >En lire plus</a><span class="ml-1 my-1">→</span>
+        <div class="my-3">
+        —
         </div>
-      </div>
+        <div class="row">
+          <div class="col-md-6">
+            <p class="text-muted mb-0"> 
+              Lire l'article
+            </p>
+          </div>
+          <div class="col-md-6 text-md-right">
+            <time datetime="{{ post.post_date|date("Y-m-d") }}" class="text-muted">
+              {{ post.post_date|date("d.m.Y") }}
+            </time>
+          </div>
+        </div>
+      </a>
     {% endfor %}
   </div>
     

@@ -3,8 +3,23 @@
   box-shadow: 0 0 0.75em -0.25em transparentize($black, 0.8);
   box-sizing: border-box;
   padding: $grid-gutter-width / 2;
+  transition: box-shadow 0.3s ease;
 
-  &:hover {
-    text-decoration: none;
+  @at-root {
+    a:hover#{&} {
+      text-decoration: none;
+      box-shadow: 0 0 1em 0.5em transparentize($black, 0.9);
+    }
+  }
+
+  .card-thumbnail {
+    margin: 0 (-$grid-gutter-width / 2) 1.5em;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
   }
 }
+

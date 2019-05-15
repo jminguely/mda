@@ -7715,10 +7715,26 @@ a.text-dark:hover, a.text-dark:focus {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 15px;
+  -webkit-transition: -webkit-box-shadow 0.3s ease;
+  transition: -webkit-box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
 }
 
-.card:hover {
+a:hover.card {
   text-decoration: none;
+  -webkit-box-shadow: 0 0 1em 0.5em rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 1em 0.5em rgba(0, 0, 0, 0.1);
+}
+
+.card .card-thumbnail {
+  margin: 0 -15px 1.5em;
+}
+
+.card .card-thumbnail img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .masonry-grid {
