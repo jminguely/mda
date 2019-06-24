@@ -15,7 +15,11 @@
           {{ form.render()|raw }}
           {% if formSent and not formSentState %}
             <div class="alert">
-              <p>Erreur à l'envoi du formulaire. Veuillez nous contacter par mail.<br /> <a href="mailto:mda.fribourg@gmail.com">mda.fribourg@gmail.com</a></p>
+              <p>
+                Erreur à l'envoi du formulaire.<br />
+                Veuillez nous contacter par mail.<br />
+                <a href="mailto:mda.fribourg@gmail.com">mda.fribourg@gmail.com</a>
+              </p>
             </div>
           {% endif %}
         {% endif %}

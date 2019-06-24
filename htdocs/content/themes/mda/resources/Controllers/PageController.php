@@ -49,16 +49,19 @@ class PageController extends Controller
 
     $form->handleRequest($request);
 
-    $fullname = $form->repository()->getFieldByName('fullname')->getValue();
-    $email = $form->repository()->getFieldByName('email')->getValue();
-    $message = $form->repository()->getFieldByName('message')->getValue();
+    $honeypot = $form->repository()->getFieldByName('age')->getValue();
     
-    $headers = "From: hello@cooperativemda.ch \r\n";
-    $headers .= "Reply-to: " .$email. "\r\n";
-    $sentState = mail( get_bloginfo('admin_email'), 'MDA - Message de '.$fullname, $message, $headers );
-
-    if (!$sentState) {
-      $errorMessage = error_get_last()['message'];
+    if ($honeypot != '') {
+      $sentState = false;
+    } else {
+      $fullname = $form->repository()->getFieldByName('fullname')->getValue();
+      $email = $form->repository()->getFieldByName('email')->getValue();
+      $message = $form->repository()->getFieldByName('message')->getValue();
+      
+      $headers = "From: hello@cooperativemda.ch \r\n";
+      $headers .= "Reply-to: " .$email. "\r\n";
+  
+      $sentState = mail( get_bloginfo('admin_email'), 'MDA - Message de '.$fullname, $message, $headers );
     }
     
     return view('pages/contact', [
