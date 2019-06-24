@@ -55,8 +55,12 @@ class PageController extends Controller
     
     $headers = "From: hello@mda.test \r\n";
     $headers .= "Reply-to: " .$email. "\r\n";
-    $sentState =  wp_mail( get_bloginfo('admin_email'), 'MDA - Message de '.$fullname, $message, $headers );
+    $sentState = mail( get_bloginfo('admin_email'), 'MDA - Message de '.$fullname, $message, $headers );
 
+    if (!$sentState) {
+      $errorMessage = error_get_last()['message'];
+    }
+    
     return view('pages/contact', [
       'form' => $form,
       'formSent' => true,
