@@ -53,7 +53,7 @@ class PageController extends Controller
     $email = $form->repository()->getFieldByName('email')->getValue();
     $message = $form->repository()->getFieldByName('message')->getValue();
     
-    $headers = "From: hello@mda.test \r\n";
+    $headers = "From: hello@cooperativemda.ch \r\n";
     $headers .= "Reply-to: " .$email. "\r\n";
     $sentState = mail( get_bloginfo('admin_email'), 'MDA - Message de '.$fullname, $message, $headers );
 
