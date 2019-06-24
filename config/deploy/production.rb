@@ -1,6 +1,6 @@
 set :application, 'cooperativemda.ch'
 
-set :stage, :staging
+set :stage, :production
 set :branch, :dev
 
 set :deploy_to, -> { "/home/jminguely/www/#{fetch(:application)}" }

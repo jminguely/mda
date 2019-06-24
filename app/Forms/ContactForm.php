@@ -33,7 +33,7 @@ class ContactForm implements Formidable
                 'rules' => 'required|min:10'
             ]))
             ->add($fields->submit('send', [
-                'label' => 'Contact Us'
+                'label' => 'Envoyer'
             ]))
             ->get();
     }
