@@ -52,7 +52,7 @@ class PageController extends Controller
     $honeypot = $form->repository()->getFieldByName('age')->getValue();
     
     if ($honeypot != '') {
-      $sentState = false;
+      $sentState = true;
     } else {
       $fullname = $form->repository()->getFieldByName('fullname')->getValue();
       $email = $form->repository()->getFieldByName('email')->getValue();
