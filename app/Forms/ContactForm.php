@@ -32,11 +32,11 @@ class ContactForm implements Formidable
             'label' => 'Votre message<sup>*</sup>',
             'rules' => 'required|min:10'
             ]))
-        ->add($fields->text('age', [
+        ->add($fields->text('address', [
             'label' => false,
             'attributes' => [
-                'class' => 'd-none',
-                'autocomplete' => 'age'
+                'class' => 'form-address',
+                'autocomplete' => 'address'
             ]
         ]))
         ->add($fields->submit('send', [
