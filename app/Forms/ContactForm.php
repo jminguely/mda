@@ -35,6 +35,7 @@ class ContactForm implements Formidable
         ->add($fields->text('address', [
             'label' => false,
             'attributes' => [
+                'aria-hidden' => 'true',
                 'class' => 'form-address',
                 'autocomplete' => 'address'
             ]
