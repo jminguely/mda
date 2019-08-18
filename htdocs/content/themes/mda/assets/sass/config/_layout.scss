@@ -113,10 +113,12 @@
   height: auto;
 }
 
-.form-address {
-  display: block !important;
-  width: 0 !important;
-  height: 0 !important;
-  opacity: 0 !important;
-  margin: 0 !important;
+.form-age {
+  background: transparent;
+  border: none;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  top: -1000px;
+  left: -1000px;
 }
