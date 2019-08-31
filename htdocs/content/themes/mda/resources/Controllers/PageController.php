@@ -49,9 +49,9 @@ class PageController extends Controller
 
     $form->handleRequest($request);
 
-    $honeypot = $form->repository()->getFieldByName('age')->getValue();
+    $antibot = $form->repository()->getFieldByName('antibot')->getValue();
     
-    if ($honeypot != '') {
+    if ($antibot != 9) {
       $sentState = true;
     } else {
       $fullname = $form->repository()->getFieldByName('fullname')->getValue();
