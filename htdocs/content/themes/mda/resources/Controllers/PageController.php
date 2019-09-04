@@ -51,10 +51,8 @@ class PageController extends Controller
 
     $data = $request->all();
 
-    $secretKey = "6Lf4_7UUAAAAAEKQdtwW-gQ48GaUGu_alg9e7otA";
-
     // post request to server
-    $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secretKey) .  '&response=' . urlencode($data["g-recaptcha-response"]);
+    $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode(env('RECAPTCHA_API_KEY')) .  '&response=' . urlencode($data["g-recaptcha-response"]);
     $response = file_get_contents($recaptcha_url);
     $responseKeys = json_decode($response,true);
 
@@ -68,13 +66,14 @@ class PageController extends Controller
   
       $sentState = mail( get_bloginfo('admin_email'), 'MDA - Message de '.$fullname, $message, $headers );
     } else {
-      $sentState = true;
+      $sentState = false;
     }
 
     return view('pages/contact', [
       'form' => $form,
       'formSent' => true,
-      'formSentState' => $sentState
+      'formSentState' => $sentState,
+      'data' => $data
     ]);
   }
   

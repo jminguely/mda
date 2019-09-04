@@ -60,7 +60,8 @@
 
 .map-container {
   height: 100%;
-  margin: 1.5em 0 1.5em;
+  min-height: 400px;
+  margin: 0 0 1.5em;
   border: 1px solid $black;
 
   @include media-breakpoint-down(sm) {
