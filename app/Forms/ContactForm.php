@@ -32,12 +32,6 @@ class ContactForm implements Formidable
             'label' => 'Votre message<sup>*</sup>',
             'rules' => 'required|min:10'
             ]))
-        ->add($fields->text('antibot', [
-            'label' => '7 + 2 =',
-            'attributes' => [
-                'rules' => 'required|number'
-            ]
-        ]))
         ->add($fields->submit('send', [
             'label' => 'Envoyer'
         ]))

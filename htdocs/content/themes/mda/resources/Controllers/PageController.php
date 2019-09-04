@@ -49,21 +49,28 @@ class PageController extends Controller
 
     $form->handleRequest($request);
 
-    $antibot = $form->repository()->getFieldByName('antibot')->getValue();
-    
-    if ($antibot != 9) {
-      $sentState = true;
-    } else {
-      $fullname = $form->repository()->getFieldByName('fullname')->getValue();
-      $email = $form->repository()->getFieldByName('email')->getValue();
-      $message = $form->repository()->getFieldByName('message')->getValue();
+    $data = $request->all();
+
+    $secretKey = "6Lf4_7UUAAAAAEKQdtwW-gQ48GaUGu_alg9e7otA";
+
+    // post request to server
+    $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secretKey) .  '&response=' . urlencode($data["g-recaptcha-response"]);
+    $response = file_get_contents($recaptcha_url);
+    $responseKeys = json_decode($response,true);
+
+    if($responseKeys["success"]) {
+      $fullname = $data["th_fullname"];
+      $email = $data["th_email"];
+      $message = $data["th_message"];
       
       $headers = "From: hello@cooperativemda.ch \r\n";
       $headers .= "Reply-to: " .$email. "\r\n";
   
       $sentState = mail( get_bloginfo('admin_email'), 'MDA - Message de '.$fullname, $message, $headers );
+    } else {
+      $sentState = true;
     }
-    
+
     return view('pages/contact', [
       'form' => $form,
       'formSent' => true,

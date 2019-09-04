@@ -3,7 +3,7 @@
 {% block main %}
 
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-5 col-lg-4">
       <h2 class="mt-4 mb-6">
         Nous contacter
       </h2>
@@ -12,7 +12,31 @@
           <p>Merci pour votre message, nous allons prendre contact avec vous prochainement.</p>
         </div>
       {% else %}
-        {{ form.render()|raw }}
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+        <form method="post" action="/contact">
+
+          <div class="th-form-group th-group-default">
+            <div class="th-form-input">
+              <label for="th_fullname_field">Nom &amp; Prénom<sup>*</sup>
+              </label>
+              <input type="text" name="th_fullname" id="th_fullname_field" value="">
+            </div>
+            <div class="th-form-input">
+              <label for="th_email_field">Adresse E-Mail<sup>*</sup>
+              </label>
+              <input type="email" name="th_email" id="th_email_field" value="">
+            </div>
+            <div class="th-form-input">
+              <label for="th_message_field">Votre message<sup>*</sup>
+              </label>
+              <textarea name="th_message" id="th_message_field"></textarea>
+            </div>
+            <div class="g-recaptcha mb-4" data-sitekey="6Lf4_7UUAAAAAAkSLRiUDLCZ_xcdzoAXrPlh_NBY"></div>
+            <div class="th-form-input">
+              <input type="submit" id="th_send_field" value="Envoyer">
+            </div>
+          </div>
+        </form>
         {% if formSent and not formSentState %}
           <div class="alert">
             <p>
@@ -24,7 +48,7 @@
         {% endif %}
       {% endif %}
     </div>
-    <div class="col-md-8 d-flex flex-column">
+    <div class="col-md-7 col-lg-8 d-flex flex-column">
       <h2 class="mt-4 mb-6">
         Nous trouver
       </h2>
