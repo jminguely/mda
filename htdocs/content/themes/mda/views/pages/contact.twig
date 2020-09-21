@@ -3,9 +3,9 @@
 {% block main %}
 
   <div class="row">
-    <div class="col-md-5 col-lg-4">
-      <h2 class="mt-4 mb-6">
-        Nous contacter
+    <div class="col-md-4">
+      <h2 class="mt-4 mb-md-6">
+        Nous écrire
       </h2>
       {% if formSent and formSentState %}
         <div class="alert alert-lg">
@@ -48,8 +48,8 @@
         </form>
       {% endif %}
     </div>
-    <div class="col-md-7 col-lg-8 d-flex flex-column">
-      <h2 class="mt-4 mb-6">
+    <div class="col-md-4 d-flex flex-column">
+      <h2 class="mt-4 mb-md-6">
         Nous trouver
       </h2>
       <div class="map-container">
@@ -196,5 +196,12 @@
       </script>
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA87PLqVYL6Ekf0pj8uQWOIeNCeitZ2a-k&callback=initMap" async defer></script>
     </div>
+    <div class="col-md-4">
+      <h2 class="mt-4 mb-md-6">
+        Nous contacter
+      </h2>
+      {{ post.post_content|raw }}
+    </div>
+
   </div>
 {% endblock %}
