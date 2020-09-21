@@ -31,7 +31,7 @@
 }
 
 .text-underline {
-  text-decoration: underline
+  text-decoration: underline;
 }
 
 .hover-expand {
@@ -40,17 +40,5 @@
 
   &:hover {
     letter-spacing: 0.5vw;
-  }
-}
-
-.list-member {
-  list-style: none;
-  padding: 0;
-
-  li {
-    &:after {
-      content: "—";
-      display: block;
-    }
   }
 }
