@@ -1,7 +1,11 @@
 {
   "name": "themosis/themosis",
   "description": "The Themosis framework. A WordPress framework.",
-  "keywords": ["themosis", "framework", "wordpress"],
+  "keywords": [
+    "themosis",
+    "framework",
+    "wordpress"
+  ],
   "license": "GPL-2.0-or-later",
   "support": {
     "issues": "https://github.com/themosis/framework/issues",
@@ -15,7 +19,7 @@
     }
   ],
   "type": "project",
-  "repositories":[
+  "repositories": [
     {
       "type": "composer",
       "url": "https://wpackagist.org"
@@ -35,16 +39,21 @@
     "php": ">=7.1.0",
     "johnpbloch/wordpress-core": "^5.0.3",
     "johnpbloch/wordpress-core-installer": "^1.0",
-    "themosis/framework": "^2.0"
+    "themosis/framework": "^2.0",
+    "wpackagist-plugin/accordion-blocks": "^1.1"
   },
   "require-dev": {
     "laravel/homestead": "^7.0",
     "phpunit/phpunit": "^7.0"
   },
-  "extra":{
+  "extra": {
     "installer-paths": {
-      "htdocs/content/plugins/{$name}/": ["type:wordpress-plugin"],
-      "htdocs/content/themes/{$name}/": ["type:wordpress-theme"]
+      "htdocs/content/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "htdocs/content/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
     },
     "wordpress-install-dir": {
       "johnpbloch/wordpress-core": "htdocs/cms"
