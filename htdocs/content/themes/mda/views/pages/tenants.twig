@@ -1,52 +1,42 @@
 {% extends 'layouts/main.twig' %}
 
 {% block main %}
-  <div class="row">
-    <div class="col-md-4 mt-4">
-      <h2>
-        Les Locataires
-      </h2>
-      <p>
-        Découvrez bientôt les artistes et leur travail dans cette section
-      </p>
-    </div>
-  </div>
-  <hr />
-  <div class="row">
-    {% for category, tenants in categories %}
-      <div class="col-md-4">
-        <h2 class="mt-4 mb-6">
-          {{ __(category, 'mda') }}
-        </h2>
-        {% for member in tenants %}
-          {% if member.url %}
-            <a href="{{ member.url }}" class="artist-card" target="_blank">
-              <span class="artist-card-more">+</span>
-              {% if member.thumbnail %}
-                <img src="{{ member.thumbnail }}"
-                  srcset="{{ member.thumbnail }} 1x, {{
-                  member.thumbnail_2x
-                  }} 2x"
-                  alt="Image de présentation de {{ member.post_title }}"
-                  class="artist-card-img" />
-              {% endif %}
-              <span class="artist-card-title">{{ member.post_title }}</span>
-            </a>
-          {% else %}
-            <div class="artist-card">
-              {% if member.thumbnail %}
-                <img src="{{ member.thumbnail }}"
-                  srcset="{{ member.thumbnail }} 1x, {{
-                  member.thumbnail_2x
-                  }} 2x"
-                  alt="Image de présentation de {{ member.post_title }}"
-                  class="artist-card-img" />
-              {% endif %}
-              <span class="artist-card-title">{{ member.post_title }}</span>
-            </div>
-          {% endif %}
-        {% endfor %}
-      </div>
-    {% endfor %}
-  </div>
+	<div class="row">
+		<div class="col-md-4 mt-4">
+			<h2>
+				Les Locataires
+			</h2>
+			<p>
+				Découvrez bientôt les artistes et leur travail dans cette section
+			</p>
+		</div>
+	</div>
+	<hr/>
+	<div class="row">
+		{% for category, tenants in categories %}
+			<div class="col-md-4">
+				<h2 class="mt-4 mb-6">
+					{{ __(category, 'mda') }}
+				</h2>
+				{% for member in tenants %}
+					{% if member.url %}
+						<a href="{{ member.url }}" class="artist-card" target="_blank">
+							<span class="artist-card-more">+</span>
+							{% if member.thumbnail %}
+								<img src="{{ member.thumbnail }}" srcset="{{ member.thumbnail }} 1x, {{ member.thumbnail_2x }} 2x" alt="Image de présentation de {{ member.post_title }}" class="artist-card-img"/>
+							{% endif %}
+							<span class="artist-card-title">{{ member.post_title }}</span>
+						</a>
+					{% else %}
+						<div class="artist-card">
+							{% if member.thumbnail %}
+								<img src="{{ member.thumbnail }}" srcset="{{ member.thumbnail }} 1x, {{ member.thumbnail_2x }} 2x" alt="Image de présentation de {{ member.post_title }}" class="artist-card-img"/>
+							{% endif %}
+							<span class="artist-card-title">{{ member.post_title }}</span>
+						</div>
+					{% endif %}
+				{% endfor %}
+			</div>
+		{% endfor %}
+	</div>
 {% endblock %}

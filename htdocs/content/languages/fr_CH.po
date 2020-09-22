@@ -16363,3 +16363,6 @@ msgstr "Arts vivants"
 
 msgid "musique"
 msgstr "Musique"
+
+msgid "non-classe"
+msgstr "Divers"

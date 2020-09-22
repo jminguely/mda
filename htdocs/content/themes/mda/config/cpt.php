@@ -11,7 +11,6 @@ PostType::make('tenants', 'Locataires', 'Member')
     'query_var' => false,
     'menu_icon' => 'dashicons-smiley',
     'show_in_rest' => false,
-    'taxonomies'  => array('category'),
   ])->set();
 
 Metabox::make('tenants', 'tenants')

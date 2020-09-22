@@ -10,7 +10,7 @@ return [
   // Post Thumbnails
   // @see https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
   /* ----------------------------------------------------------------------------------------------- */
-  'post-thumbnails' => ['post', 'page', 'tenants'],
+  'post-thumbnails' => ['post', 'page'],
 
   /* ----------------------------------------------------------------------------------------------- */
   // Post Formats

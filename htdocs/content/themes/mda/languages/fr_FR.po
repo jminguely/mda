@@ -55,6 +55,9 @@ msgstr ""
 msgid "https://www.themosis.com/"
 msgstr ""
 
+msgid "non-classe"
+msgstr "Divers"
+
 msgid "arts-visuels"
 msgstr "Arts visuels"
 

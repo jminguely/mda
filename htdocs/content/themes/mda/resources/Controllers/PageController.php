@@ -22,17 +22,21 @@ class PageController extends Controller
       'post_type' => 'tenants'
     ));
 
-    $categories = array(
-      'arts-visuels'   => array(),
-      'arts-vivants'  => array(),
-      'musique'       => array()
-    );
+    $categories = array();
 
     foreach ($tenants as $key => $member) {
       $member->thumbnail = get_the_post_thumbnail_url($member->ID, 'card-thumbnail');
       $member->thumbnail_2x = get_the_post_thumbnail_url($member->ID, 'card-thumbnail_2x');
-      $member->categorie = get_post_meta($member->ID, 'th_categorie', true);
       $member->url = get_post_meta($member->ID, 'th_url', true);
+
+      if (get_post_meta($member->ID, 'th_categorie', true) != null) {
+        $member->categorie = get_post_meta($member->ID, 'th_categorie', true);
+      } else {
+        $member->categorie = 'non-classe';
+      }
+
+      if (!array_key_exists($member->categorie, $categories)) $categories[$member->categorie] = array();
+
       array_push($categories[$member->categorie], $member);
     }
 
