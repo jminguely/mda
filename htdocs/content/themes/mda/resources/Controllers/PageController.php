@@ -40,6 +40,8 @@ class PageController extends Controller
       array_push($categories[$member->categorie], $member);
     }
 
+    ksort($categories);
+
     return view('pages/tenants', ['post' => $post, 'categories' => $categories]);
   }
 
