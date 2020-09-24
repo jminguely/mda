@@ -19,7 +19,8 @@ class PageController extends Controller
   {
 
     $tenants = get_posts(array(
-      'post_type' => 'tenants'
+      'post_type' => 'tenants',
+      'posts_per_page' => -1
     ));
 
     $categories = array();
