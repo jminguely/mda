@@ -14,7 +14,7 @@ jobs:
         with:
           ruby-version: 2.6
           bundler-cache: true
-      - uses: miloserdow/capistrano-deploy@master
+      - uses: miloserdow/capistrano-deploy@v2.2
         with:
           target: production
           enc_rsa_key_val: ${{ secrets.ENC_RSA_KEY }}
