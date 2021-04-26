@@ -1,2 +1,4 @@
 *
 !.gitignore
+!filemaker-reader
+!filemaker-reader/*
