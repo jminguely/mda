@@ -20,21 +20,21 @@ class ContactForm implements Formidable
     public function build(FormFactoryInterface $factory, FieldFactoryInterface $fields): FormInterface
     {
         return $factory->make()
-            ->add($fields->text('fullname', [
-                'label' => 'Nom & Prénom<sup>*</sup>',
-                'rules' => 'required|min:3'
+        ->add($fields->text('fullname', [
+            'label' => 'Nom & Prénom<sup>*</sup>',
+            'rules' => 'required|min:3'
             ]))
-            ->add($fields->email('email', [
-                'label' => 'Adresse E-Mail<sup>*</sup>',
-                'rules' => 'required|email'
+        ->add($fields->email('email', [
+            'label' => 'Adresse E-Mail<sup>*</sup>',
+            'rules' => 'required|email'
             ]))
-            ->add($fields->textarea('message', [
-                'label' => 'Votre message<sup>*</sup>',
-                'rules' => 'required|min:10'
+        ->add($fields->textarea('message', [
+            'label' => 'Votre message<sup>*</sup>',
+            'rules' => 'required|min:10'
             ]))
-            ->add($fields->submit('send', [
-                'label' => 'Envoyer'
-            ]))
-            ->get();
+        ->add($fields->submit('send', [
+            'label' => 'Envoyer'
+        ]))
+        ->get();
     }
 }

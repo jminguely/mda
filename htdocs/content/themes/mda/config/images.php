@@ -15,6 +15,8 @@
  *                            to the media custom field. If string, used as the display name ;)
  */
 return [
-    'home_cover' => [1000, 1000, false],
-    'post_thumbnail' => [400, 400, false],
+  'home_cover' => [1000, 1000, false],
+  'post_thumbnail' => [400, 400, false],
+  'card-thumbnail' => [400, 200, true],
+  'card-thumbnail_2x' => [800, 400, true],
 ];

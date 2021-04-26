@@ -23,3 +23,44 @@
   }
 }
 
+.artist-card {
+  display: block;
+  height: 0;
+  padding-bottom: 50%;
+  margin-bottom: 2rem;
+  position: relative;
+  background: #333;
+
+  .artist-card-more {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    width: 1.5rem;
+    text-align: center;
+    background: white;
+    margin: 1.5rem;
+    mix-blend-mode: lighten;
+    box-shadow: 0 0 5px black;
+    z-index: 10;
+  }
+
+  .artist-card-title {
+    position: absolute;
+    bottom: 0;
+    background: white;
+    padding: 0.3rem;
+    margin: 1.5rem;
+    mix-blend-mode: lighten;
+    box-shadow: 0 0 5px black;
+    z-index: 10;
+  }
+
+  .artist-card-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

@@ -60,7 +60,8 @@
 
 .map-container {
   height: 100%;
-  margin: 1.5em 0 1.5em;
+  min-height: 400px;
+  margin: 0 0 1.5em;
   border: 1px solid $black;
 
   @include media-breakpoint-down(sm) {
@@ -111,4 +112,14 @@
 .wp-block-image img {
   max-width: 100%;
   height: auto;
+}
+
+.form-age {
+  background: transparent;
+  border: none;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  top: -1000px;
+  left: -1000px;
 }

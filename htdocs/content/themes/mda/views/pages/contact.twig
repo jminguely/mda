@@ -1,76 +1,207 @@
 {% extends 'layouts/main.twig' %}
 
 {% block main %}
-    
+
   <div class="row">
     <div class="col-md-4">
-        <h2 class="mt-4 mb-6">
-           Nous contacter   
-        </h2>
-        {% if formSent and formSentState %}
-          <div class="alert alert-lg">
-            <p>Merci pour votre message, nous allons prendre contact avec vous prochainement.</p>
-          </div>
-        {% else %}
-          {{ form.render()|raw }}
-          {% if formSent and not formSentState %}
-            <div class="alert">
-              <p>Erreur à l'envoi du formulaire. Veuillez nous contacter par mail.<br /> <a href="mailto:mda.fribourg@gmail.com">mda.fribourg@gmail.com</a></p>
-            </div>
-          {% endif %}
-        {% endif %}
-    </div>
-    <div class="col-md-8 d-flex flex-column">
-        <h2 class="mt-4 mb-6">
-           Nous trouver   
-        </h2>
-        <div class="map-container">
-          <div id="map" class="map"></div>
+      <h2 class="mt-4 mb-md-6">
+        Nous écrire
+      </h2>
+      {% if formSent and formSentState %}
+        <div class="alert alert-lg">
+          <p>Merci pour votre message, nous allons prendre contact avec vous prochainement.</p>
         </div>
-        <script>
-          var map;
-          function initMap() {
-            const myLatlng = new google.maps.LatLng(46.81871611, 7.13058947);
-
-            const styles = [{"featureType":"administrative","elementType":"all","stylers":[{"saturation":"-100"}]},{"featureType":"administrative.province","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"all","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","elementType":"all","stylers":[{"saturation":-100},{"lightness":"50"},{"visibility":"simplified"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":"-100"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"all","stylers":[{"lightness":"30"}]},{"featureType":"road.local","elementType":"all","stylers":[{"lightness":"40"}]},{"featureType":"transit","elementType":"all","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]},{"featureType":"water","elementType":"labels","stylers":[{"lightness":-25},{"saturation":-100}]}];
-
-            const marker = new google.maps.Marker({
-                position: myLatlng,
-                title:"La Maison des Artistes"
-            });
-
-            const contentString = '<div id="content">'+
-              '<div id="siteNotice">'+
-              '</div>'+
-              '<h4>La Maison des Artistes</h4>'+
-              '<div id="bodyContent">'+
-              '<p>Rue Jean Prouvé 4-6-8<br />1762 Givisiez</p>'+
-              '</div>'+
-              '</div>';
-
-            const infowindow = new google.maps.InfoWindow({
-              content: contentString
-            });
-
-
-            map = new google.maps.Map(document.getElementById('map'), {
-              center: myLatlng,
-              zoom: 15,
-              styles: styles,
-              mapTypeControl: false,
-              streetViewControl: false
-            });
-
-            marker.addListener('click', function() {
-              infowindow.open(map, marker);
-            });
-
-            // To add the marker to the map, call setMap();
-            marker.setMap(map);
-          }
-        </script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA87PLqVYL6Ekf0pj8uQWOIeNCeitZ2a-k&callback=initMap"
-        async defer></script>
+      {% else %}
+        {% if formSent and not formSentState %}
+          <div class="alert mb-4 mt-3">
+            <p>
+              Erreur à l'envoi du formulaire.<br/>
+              <strong>Vérifiez votre saisie, ou le captcha.</strong>
+              Veuillez nous contacter par mail.<br/>
+              <a href="mailto:mda.fribourg@gmail.com">mda.fribourg@gmail.com</a>
+            </p>
+          </div>
+        {% endif %}
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+        <form method="post" action="/contact">
+          <div class="th-form-group th-group-default">
+            <div class="th-form-input">
+              <label for="th_fullname_field">Nom &amp; Prénom<sup>*</sup>
+              </label>
+              <input type="text" name="th_fullname" id="th_fullname_field" value="{{ data.th_fullname|default('') }}">
+            </div>
+            <div class="th-form-input">
+              <label for="th_email_field">Adresse E-Mail<sup>*</sup>
+              </label>
+              <input type="email" name="th_email" id="th_email_field" value="{{ data.th_email|default('') }}">
+            </div>
+            <div class="th-form-input">
+              <label for="th_message_field">Votre message<sup>*</sup>
+              </label>
+              <textarea name="th_message" id="th_message_field">{{ data.th_message|default('') }}</textarea>
+            </div>
+            <div class="g-recaptcha mb-4" data-sitekey="6Lf4_7UUAAAAAAkSLRiUDLCZ_xcdzoAXrPlh_NBY"></div>
+            <div class="th-form-input">
+              <input type="submit" id="th_send_field" value="Envoyer">
+            </div>
+          </div>
+        </form>
+      {% endif %}
     </div>
+    <div class="col-md-4 d-flex flex-column">
+      <h2 class="mt-4 mb-md-6">
+        Nous trouver
+      </h2>
+      <div class="map-container">
+        <div id="map" class="map"></div>
+      </div>
+      <script>
+        var map;
+        function initMap() {
+          const myLatlng = new google.maps.LatLng(46.8180504055804, 7.12806092414243);
+
+          const styles = [
+            {
+              "featureType": "administrative",
+              "elementType": "all",
+              "stylers": [
+                {
+                  "saturation": "-100"
+                }
+              ]
+            },
+            {
+              "featureType": "administrative.province",
+              "elementType": "all",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
+            },
+            {
+              "featureType": "landscape",
+              "elementType": "all",
+              "stylers": [
+                {
+                  "saturation": -100
+                }, {
+                  "lightness": 65
+                }, {
+                  "visibility": "on"
+                }
+              ]
+            },
+            {
+              "featureType": "poi",
+              "elementType": "all",
+              "stylers": [
+                {
+                  "saturation": -100
+                }, {
+                  "lightness": "50"
+                }, {
+                  "visibility": "simplified"
+                }
+              ]
+            }, {
+              "featureType": "road",
+              "elementType": "all",
+              "stylers": [
+                {
+                  "saturation": "-100"
+                }
+              ]
+            }, {
+              "featureType": "road.highway",
+              "elementType": "all",
+              "stylers": [
+                {
+                  "visibility": "simplified"
+                }
+              ]
+            }, {
+              "featureType": "road.arterial",
+              "elementType": "all",
+              "stylers": [
+                {
+                  "lightness": "30"
+                }
+              ]
+            }, {
+              "featureType": "road.local",
+              "elementType": "all",
+              "stylers": [
+                {
+                  "lightness": "40"
+                }
+              ]
+            }, {
+              "featureType": "transit",
+              "elementType": "all",
+              "stylers": [
+                {
+                  "saturation": -100
+                }, {
+                  "visibility": "simplified"
+                }
+              ]
+            }, {
+              "featureType": "water",
+              "elementType": "geometry",
+              "stylers": [
+                {
+                  "hue": "#ffff00"
+                }, {
+                  "lightness": -25
+                }, {
+                  "saturation": -97
+                }
+              ]
+            }, {
+              "featureType": "water",
+              "elementType": "labels",
+              "stylers": [
+                {
+                  "lightness": -25
+                }, {
+                  "saturation": -100
+                }
+              ]
+            }
+          ];
+
+          const marker = new google.maps.Marker({position: myLatlng, title: "La Maison des Artistes"});
+
+          const contentString = '<div id="content">' + '<div id="siteNotice">' + '</div>' + '<h4>La Maison des Artistes</h4>' + '<div id="bodyContent">' + '<p>Rue Jean Prouvé 4-6-8<br />1762 Givisiez</p>' + '</div>' + '</div>';
+
+          const infowindow = new google.maps.InfoWindow({content: contentString});
+
+
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: myLatlng,
+            zoom: 15,
+            styles: styles,
+            mapTypeControl: false,
+            streetViewControl: false
+          });
+
+          marker.addListener('click', function () {
+            infowindow.open(map, marker);
+          });
+
+          // To add the marker to the map, call setMap();
+          marker.setMap(map);
+        }
+      </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA87PLqVYL6Ekf0pj8uQWOIeNCeitZ2a-k&callback=initMap" async defer></script>
+    </div>
+    <div class="col-md-4">
+      <h2 class="mt-4 mb-md-6">
+        Nous contacter
+      </h2>
+      {{ post.post_content|raw }}
+    </div>
+
   </div>
 {% endblock %}
